@@ -4,7 +4,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends ca-certificates nginx && \
     rm -rf /var/lib/apt/lists/* && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log && mkdir src
+    ln -sf /dev/stderr /var/log/nginx/error.log && mkdir src && \
+    openssl dhparam -out /etc/nginx/dhparams.pem 2048
 
 COPY site-https.in run.sh src/
 
