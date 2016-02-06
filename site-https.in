@@ -1,5 +1,5 @@
 upstream app {
-    server $APP_LINK:$PORT;
+    $UPSTREAM_SERVER
 }
 
 server {
