@@ -8,7 +8,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
     ln -sf /dev/stderr /var/log/nginx/error.log && mkdir src
 
 COPY site-https.in *.sh src/
-RUN cd src; chmod +x run.sh
+RUN cd src; chmod +x *.sh
 EXPOSE 80 443
 VOLUME ["/var/cache/nginx"]
 
