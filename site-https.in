@@ -35,6 +35,10 @@ server {
         internal;
     }
 
+    location = /.well-known/acme-challenge {
+      root /var/lib/nginx/html;
+    }
+
     location / {
         proxy_cache my_cache;
         proxy_cache_use_stale error timeout updating http_404 http_500 http_502 http_503 http_504;
