@@ -36,7 +36,8 @@ server {
     }
 
     location = /.well-known/acme-challenge {
-      root /var/lib/nginx/html;
+        root /var/lib/nginx/html;
+        try_files /.well-known/acme-challenge $uri;
     }
 
     location / {
