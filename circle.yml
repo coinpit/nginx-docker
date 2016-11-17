@@ -6,11 +6,15 @@ machine:
 test:
   override:
       - docker info
-      - docker build -t coinpit/nginx:v1.0.0 .
 
 deployment:
   hub:
     branch: master
     commands:
+      - docker build -t coinpit/nginx:v1.0.0 .
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push coinpit/nginx
+    branch: generic
+      - docker build -t coinpit/nginx:generic-1.0.0 .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push coinpit/nginx
