@@ -15,8 +15,8 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push coinpit/nginx
   generic:
-    branch: generic
+    branch: static
     commands:
-      - docker build -t coinpit/nginx:generic-1.0.0 .
+      - docker build -t coinpit/nginx:static-1.0.0 .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push coinpit/nginx
