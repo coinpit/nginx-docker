@@ -1,3 +1,7 @@
+upstream app {
+    $UPSTREAM_SERVER
+}
+
 server {
     listen 443 ssl;
     server_name $SITE_ADDR;
