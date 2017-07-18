@@ -25,6 +25,7 @@ server {
     add_header Referrer-Policy 'origin';
     server_tokens off;
     gzip on;
+    gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
 
     location /.well-known/acme-challenge/ {
         root /var/lib/nginx/html;
