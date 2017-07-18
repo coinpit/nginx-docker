@@ -24,6 +24,7 @@ server {
     add_header X-XSS-Protection \"1; mode=block\";
     add_header Referrer-Policy 'origin';
     server_tokens off;
+    gzip on;
 
     location /.well-known/acme-challenge/ {
         root /var/lib/nginx/html;
