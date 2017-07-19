@@ -20,7 +20,7 @@ server {
     add_header Strict-Transport-Security 'max-age=63072000; includeSubdomains; preload';
     add_header X-Frame-Options SAMEORIGIN;
     add_header X-Content-Type-Options nosniff;
-    add_header Content-Security-Policy \"default-src 'self' https://www.google-analytics.com ; img-src: 'self' data: ; font-src 'self' data: ; child-src 'self' https://www.youtube.com ; connect-src wss://$SITE_ADDR https://$SITE_ADDR \";
+    add_header Content-Security-Policy \"default-src 'self' https://www.google-analytics.com ; img-src 'self' data: ; font-src 'self' data: ; child-src 'self' https://www.youtube.com ; connect-src wss://$SITE_ADDR https://$SITE_ADDR \";
     add_header X-XSS-Protection \"1; mode=block\";
     add_header Referrer-Policy 'origin';
     server_tokens off;
