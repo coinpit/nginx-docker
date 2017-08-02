@@ -51,3 +51,8 @@ server {
     server_name $SITE_ADDR;
     return 301 https://\$server_name\$request_uri;
 }
+
+server {
+  server_name www.$SITE_ADDR;
+  return 301 https://\$server_name\$request_uri;
+}
