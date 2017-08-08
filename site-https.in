@@ -48,6 +48,6 @@ server {
 
 server {
     listen 80;
-    server_name $SITE_ADDR;
+#    server_name $SITE_ADDR;
     return 301 https://\$server_name\$request_uri;
 }
