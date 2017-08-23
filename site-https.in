@@ -31,7 +31,7 @@ server {
         root /var/lib/nginx/html;
     }
 
-    error_page 404 =200 /index.html;
+    error_page 404 =200 / ;
 
  #   location /ico {
  #       proxy_set_header Host \$host;
