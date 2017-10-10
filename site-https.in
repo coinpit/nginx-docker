@@ -28,8 +28,8 @@ server {
     gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
 
     location /token/ {
-        proxy_set_header     Access-Control-Allow-Origin "*";
-        proxy_set_header Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept";
+        proxy_set_header Access-Control-Allow-Origin "*";
+        # proxy_set_header Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept";
         proxy_pass https://leverj-prod.appspot.com/;
     }
 
