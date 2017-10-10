@@ -27,9 +27,9 @@ server {
     gzip on;
     gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
 
-#    location /.well-known/acme-challenge/ {
-#        root /var/lib/nginx/html;
-#    }
+    location /token {
+        proxy_pass https://leverj-prod.appspot.com;
+    }
 
     error_page 404 =200 / ;
 
