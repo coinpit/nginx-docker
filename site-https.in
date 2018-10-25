@@ -41,3 +41,9 @@ server {
     server_name www.$SITE_ADDR;
     return 301 https://$SITE_ADDR\$request_uri;
 }
+
+server {
+    listen 443;
+    server_name www.$SITE_ADDR;
+    return 301 https://$SITE_ADDR\$request_uri;
+}
