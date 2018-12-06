@@ -27,7 +27,7 @@ server {
     gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
 
     # expiry by type
-    map $sent_http_content_type $expires {
+    map \$sent_http_content_type \$expires {
         default                           1m;
         image/jpg                         1y;
         image/jpeg                        1y;
@@ -39,7 +39,7 @@ server {
         application/pdf                   1m;
         text/x-javascript                 1m;
     }
-    expires $expires;
+    expires \$expires;
 
     # error page
     $ERROR_404
