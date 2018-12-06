@@ -12,8 +12,8 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run: docker info
-      - run: docker build -t coinpit/nginx:static-1.0.0 .
+      - run: docker build -t leverj/nginx:static-1.0.0 .
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run: docker push coinpit/nginx:static-1.0.0
+      - run: docker push leverj/nginx:static-1.0.0
       - run: docker logout
 
