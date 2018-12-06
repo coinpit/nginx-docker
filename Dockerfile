@@ -12,4 +12,4 @@ RUN cd src; chmod +x *.sh
 EXPOSE 80 443
 VOLUME ["/var/cache/nginx"]
 
-CMD cd src; ./run.sh
+CMD cd src; ./run.sh; cat /etc/nginx/sites-enabled/site-https
