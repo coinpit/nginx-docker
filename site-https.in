@@ -2,6 +2,21 @@
 #    $UPSTREAM_SERVER
 #}
 
+# expiry by type
+map \$sent_http_content_type \$expires {
+    default                           1m;
+    image/jpg                         1y;
+    image/jpeg                        1y;
+    image/gif                         1y;
+    image/png                         1y;
+    image/x-icon                      1y;
+    application/octet-stream          1y;
+    text/css                          1m;
+    application/pdf                   1m;
+    text/x-javascript                 1m;
+}
+expires \$expires;
+
 server {
     listen 443 ssl;
     server_name $SITE_ADDR;
@@ -25,21 +40,6 @@ server {
     server_tokens off;
     gzip on;
     gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
-
-    # expiry by type
-    map \$sent_http_content_type \$expires {
-        default                           1m;
-        image/jpg                         1y;
-        image/jpeg                        1y;
-        image/gif                         1y;
-        image/png                         1y;
-        image/x-icon                      1y;
-        application/octet-stream          1y;
-        text/css                          1m;
-        application/pdf                   1m;
-        text/x-javascript                 1m;
-    }
-    expires \$expires;
 
     # error page
     $ERROR_404
